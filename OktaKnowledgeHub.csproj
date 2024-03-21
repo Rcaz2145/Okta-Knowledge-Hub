@@ -1,10 +1,60 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+using System;
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+public class OktaKnowledgeHub
+{
+    public void Sell()
+    {
+        Console.WriteLine("Welcome to Roy Cohen's Okta Knowledge Hub.");
+        Console.Write("Would you like to explore the various software options offered by Okta? (yes/no): ");
+        string choice = Console.ReadLine().ToLower();
+        if (choice == "yes" || choice == "y")
+        {
+            Console.WriteLine("Great! We offer 2 major cloud services:");
+            Console.WriteLine("1. Workforce Identity Cloud");
+            Console.WriteLine("2. Customer Identity Cloud");
+            Console.Write("Which would you like to learn more about? (1/2): ");
+            string choice2 = Console.ReadLine();
+            if (choice2 == "1")
+            {
+                Console.WriteLine("Excellent choice! Here is a list of our Workforce Identity Cloud options, and remember we offer free trials:");
+                Console.WriteLine("- Actions");
+                Console.WriteLine("- Multifactor Authentication");
+                Console.WriteLine("- Passwordless");
+                Console.WriteLine("- Single Sign On");
+                Console.WriteLine("- Universal Login");
+                Console.WriteLine("Feel free to contact us if you'd like to learn more about our pricing plans.");
+            }
+            else if (choice2 == "2")
+            {
+                Console.WriteLine("Excellent choice! Here is a list of our Customer Identity Cloud options, and remember we offer free trials:");
+                Console.WriteLine("- Single Sign On");
+                Console.WriteLine("- Adaptive MFA");
+                Console.WriteLine("- Lifecycle Management");
+                Console.WriteLine("- Workflows");
+                Console.WriteLine("- Identity Governance");
+                Console.WriteLine("- Privileged Access");
+                Console.WriteLine("Feel free to contact us if you'd like to learn more about our pricing plans.");
+            }
+            else
+            {
+                Console.WriteLine("Invalid input. Please enter '1' or '2'.");
+            }
+        }
+        else if (choice == "no" || choice == "n")
+        {
+            Console.WriteLine("No problem, have a great day!");
+        }
+        else
+        {
+            Console.WriteLine("Invalid input. Please enter 'yes' or 'no'.");
+        }
+        Console.WriteLine("\n\n---\n");
+        Console.WriteLine("Thank you for using Roy Cohen's Okta Knowledge Hub. Have a great day!");
+    }
 
-</Project>
+    public static void Main(string[] args)
+    {
+        OktaKnowledgeHub okh = new OktaKnowledgeHub();
+        okh.Sell();
+    }
+}
